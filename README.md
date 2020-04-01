@@ -14,6 +14,7 @@ Many of Amazon's shoppers depend on product reviews to make a purchase. Amazon m
 *Quesion:* Are reviews on Amazon's Vine program trustworthy?
 
 Execution:
+
 *Level 1 Steps*: 
 
 Created S3 Bucket called [Amazon-review-bucket](https://s3.console.aws.amazon.com/s3/buckets/amazon-review-bucket/?region=us-east-1). 
@@ -27,7 +28,9 @@ Created a jupyter notebook (in Google's Colab) to retrieve the data, clean the d
 
 Data was then saved to the remote database using RDS instance on AWS. 
 
-Level 2: SQL was used to perform a statistical analysis of selected data.
+*Level 2 Steps*: 
+
+SQL was used to perform a statistical analysis of selected data.
 
 A script was provided for creating the 4 required tables in Postgres (schema.sql). However, the product_category was not included in it, so a second script (called [after_schema.sql](level-1/after_schema.sql) was created to drop and recreate the products table to include this field. This way the output of both dataset can share tables. A view linking the 4 tables allows for easy querying and performing analysis. 
 
